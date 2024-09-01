@@ -6,6 +6,7 @@ PropNet is a modern commercial real estate platform inspired by industry leaders
 ## Features
 - User authentication and authorization system using OAuth2 with password flow
 - Property listing and advanced search functionality with filtering options
+- Interactive map view for property locations
 - Subscription and payment management via Stripe integration
 - Favorites and alerts system for personalized user experience
 - Responsive design for seamless desktop and mobile usage
@@ -20,15 +21,20 @@ PropNet is a modern commercial real estate platform inspired by industry leaders
 - ORM: SQLAlchemy
 - API Documentation: Swagger UI
 - Database Migrations: Alembic
+- Mapping: react-leaflet
 
 ## Recent Updates
-- Merged `implement-payment-methods` branch into `backend-setup`
-- Implemented Crexi-inspired design changes across the platform
-- Added responsive header with navigation menu for improved mobile experience
-- Created comprehensive user dashboard for managing listings, favorites, and subscriptions
-- Enhanced property listing cards with grid layout and improved visual design
+- Implemented interactive map feature using react-leaflet for property visualization
+- Completed design alignment with Crexi's aesthetic across the platform
+- Updated color scheme:
+  - Primary blue: #0061DF
+  - Secondary colors: Green #34C759, Red #FF3B30
+  - Refined gray scale for improved contrast and readability
+- Typography enhancements:
+  - Adopted Inter font family for both headings and body text
+- Improved responsive header with navigation menu for better mobile experience
+- Enhanced property listing cards with grid layout and updated visual design
 - Integrated advanced search functionality with multiple filtering options
-- Updated color scheme and typography for improved visual appeal and brand consistency
 - Implemented Stripe integration for subscription management
 
 ## Setup and Installation
@@ -68,9 +74,11 @@ API documentation is available at `http://localhost:8000/docs` when running the 
 
 ## Current Development Status
 - User authentication and property listing features are fully implemented
+- Interactive map view for property locations is now available
 - Stripe integration for subscription management is in place
-- Frontend design has been updated to match Crexi's aesthetic
-- User dashboard is functional but may require further enhancements
+- Frontend design has been fully updated to match Crexi's aesthetic
+- User dashboard is functional with improved layout and styling
+- Advanced search functionality with multiple filters is operational
 
 ## Known Issues
 - Auction functionality is not yet implemented
@@ -90,5 +98,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 4. Integrate more comprehensive testing, including end-to-end tests
 5. Optimize performance and scalability for handling larger volumes of listings
 6. Implement advanced search algorithms for more accurate property matching
+7. Enhance map functionality with clustering for better performance with large datasets
 
 For a detailed roadmap and current issues, please check our [GitHub Issues](https://github.com/your-repo/propnet/issues) page.

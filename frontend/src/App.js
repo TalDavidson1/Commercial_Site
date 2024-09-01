@@ -19,34 +19,40 @@ const theme = extendTheme({
   colors: {
     brand: {
       50: '#E6F0FF',
-      100: '#B8D5FF',
-      200: '#8ABAFF',
-      300: '#5C9FFF',
-      400: '#2E84FF',
-      500: '#0069FF',
-      600: '#0054CC',
-      700: '#003F99',
-      800: '#002A66',
-      900: '#001533',
+      100: '#CCE0FF',
+      200: '#99C1FF',
+      300: '#66A3FF',
+      400: '#3384FF',
+      500: '#0061DF', // Crexi's primary blue
+      600: '#004EC2',
+      700: '#003A94',
+      800: '#002766',
+      900: '#001438',
     },
     secondary: {
-      green: '#00C389',
-      red: '#FF5A5F',
+      green: '#34C759', // Adjusted to a more vibrant green
+      red: '#FF3B30',   // Adjusted to a brighter red
     },
     gray: {
-      100: '#F7F8F9',
-      500: '#6E6E6E',
-      900: '#2A2A33',
+      100: '#F7F8FA',
+      200: '#E5E8ED',
+      300: '#D3D8E0',
+      400: '#C1C7D3',
+      500: '#A0A8B5',
+      600: '#808997',
+      700: '#606A7A',
+      800: '#404B5C',
+      900: '#202C3E',
     },
   },
   fonts: {
-    heading: '"Roboto", sans-serif',
-    body: '"Open Sans", sans-serif',
+    heading: '"Inter", sans-serif',
+    body: '"Inter", sans-serif',
   },
   styles: {
     global: {
       body: {
-        bg: 'gray.100',
+        bg: 'white',
         color: 'gray.900',
       },
     },
