@@ -2,3 +2,8 @@ fastapi
 uvicorn
 sqlalchemy
 stripe
+passlib[bcrypt]==1.7.4
+python-jose[cryptography]
+python-multipart
+psycopg2-binary
+bcrypt==3.2.2
