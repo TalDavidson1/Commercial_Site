@@ -29,10 +29,27 @@ const theme = extendTheme({
       800: '#002A66',
       900: '#001533',
     },
+    secondary: {
+      green: '#00C389',
+      red: '#FF5A5F',
+    },
+    gray: {
+      100: '#F7F8F9',
+      500: '#6E6E6E',
+      900: '#2A2A33',
+    },
   },
   fonts: {
     heading: '"Roboto", sans-serif',
     body: '"Open Sans", sans-serif',
+  },
+  styles: {
+    global: {
+      body: {
+        bg: 'gray.100',
+        color: 'gray.900',
+      },
+    },
   },
 });
 
