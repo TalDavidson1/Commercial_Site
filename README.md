@@ -171,19 +171,20 @@ Here's an overview of the main files and directories in the PropNet repository:
 
 - `src/`: Main source directory for React components and logic.
   - `components/`: Reusable React components.
-    - `Map.js`: Implements the interactive map using react-leaflet. This component is crucial for the Zillow-like experience, displaying property locations on an interactive map with clustering for better performance.
-    - `PropertyCard.js`: Displays individual property information.
-    - `SearchBar.js`: Handles property search functionality, including filters for price, square footage, and property type.
+    - `Map.js`: Implements an interactive map using react-leaflet, crucial for the Zillow-like experience. It displays property locations with markers and uses clustering for better performance with large datasets. The map component is responsive to search results and allows users to explore properties visually.
+    - `SearchBar.js`: Provides advanced search functionality with a user-friendly interface. It includes a main search input for location (address, neighborhood, city, or ZIP) and collapsible advanced filters for price range, square footage, and property type. This component enhances the user's ability to find specific properties quickly.
+    - `PropertyList.js`: Renders a list of property cards based on search results or default listings. It handles the display of property information in a grid layout, optimized for both desktop and mobile views. This component works in tandem with the Map to provide a comprehensive property browsing experience.
+    - `PropertyCard.js`: Displays individual property information in a concise, visually appealing format. It shows key details such as price, square footage, and property type, with a thumbnail image to give users a quick overview of each listing.
   - `pages/`: React components for different pages/routes.
-    - `Home.js`: Landing page component that integrates the Map and SearchBar components. It provides a layout similar to Zillow, with a search bar and property list on one side (30% width) and the interactive map on the other (70% width).
-    - `PropertyDetails.js`: Detailed view of a single property.
-    - `UserDashboard.js`: User's personal dashboard.
-  - `services/`: API service functions for backend communication.
-  - `utils/`: Utility functions and helpers.
-  - `App.js`: Main React component that sets up routing and global state.
-  - `index.js`: Entry point of the React application.
+    - `Home.js`: The main landing page that integrates Map, SearchBar, and PropertyList components. It implements a Zillow-like layout with the search bar and property list on one side (30% width) and the interactive map on the other (70% width). This component manages the state of search results and coordinates the interaction between search inputs and map display.
+    - `PropertyDetails.js`: Provides a detailed view of a single property, including extended information, multiple images, and potentially virtual tour options.
+    - `UserDashboard.js`: A personalized dashboard for users to manage their saved properties, search history, and account settings.
+  - `services/`: API service functions for backend communication, handling data fetching and state management.
+  - `utils/`: Utility functions and helpers for common tasks across the application.
+  - `App.js`: Main React component that sets up routing and global state management.
+  - `index.js`: Entry point of the React application, responsible for rendering the App component and setting up any necessary providers.
 
-- `public/`: Static assets and HTML template.
+- `public/`: Contains static assets and the HTML template for the React application.
 
 ### Configuration Files
 
@@ -192,4 +193,24 @@ Here's an overview of the main files and directories in the PropNet repository:
 - `package.json`: Node.js dependencies and scripts for the frontend.
 - `alembic.ini`: Configuration for Alembic database migrations.
 
-This structure organizes the codebase into logical components, separating backend and frontend concerns while maintaining a clear hierarchy for easy navigation and maintenance. The new Map and Home components work together to provide a Zillow-like experience, with an interactive map view of properties and an integrated search functionality.
+This structure organizes the codebase into logical components, separating backend and frontend concerns while maintaining a clear hierarchy for easy navigation and maintenance. The integration of Map, SearchBar, PropertyList, and Home components creates a cohesive, Zillow-like user experience, allowing users to search, view, and interact with property listings efficiently.
+
+## Recent Updates
+
+### Hover Functionality
+- Implemented hover effects for both map pins and property listings
+- Property cards in the list highlight when the corresponding map pin is hovered over
+- Map pins change color when the corresponding property card is hovered over
+- This bidirectional hover functionality enhances user interaction and property identification
+
+### Map Improvements
+- Improved map centering and pin accuracy for better property location representation
+- Sample address (805 Pine Street, Mooresville, NC 28115) now correctly centered on the map
+- Adjusted zoom level for optimal visibility of property pins
+- Enhanced pin placement accuracy for all listed properties
+
+### Known Limitations
+- Currently, only one pin may be visible on the map despite multiple property listings
+- This is a temporary limitation that will be addressed in future updates
+
+These updates significantly improve the user experience by providing more accurate property locations and enhancing the visual connection between the property list and map view.

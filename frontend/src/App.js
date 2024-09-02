@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import axios from 'axios';
 
 // Import components
 import Header from './components/Header';
-import PropertyList from './components/PropertyList';
+import Home from './pages/Home';
 import PropertyDetail from './components/PropertyDetail';
 import Login from './components/Login';
 import Register from './components/Register';
 import UserDashboard from './components/UserDashboard';
+import ErrorBoundary from './components/ErrorBoundary';
 
 // Set up Axios base URL
 axios.defaults.baseURL = 'http://0.0.0.0:8000'; // Updated to the actual backend URL
@@ -65,13 +66,15 @@ function App() {
       <Router>
         <div className="App">
           <Header />
-          <Routes>
-            <Route path="/" element={<PropertyList />} />
-            <Route path="/property/:id" element={<PropertyDetail />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/dashboard" element={<UserDashboard />} />
-          </Routes>
+          <ErrorBoundary>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/property/:id" element={<PropertyDetail />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/dashboard" element={<UserDashboard />} />
+            </Routes>
+          </ErrorBoundary>
         </div>
       </Router>
     </ChakraProvider>
