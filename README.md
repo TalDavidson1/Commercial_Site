@@ -101,3 +101,95 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 7. Enhance map functionality with clustering for better performance with large datasets
 
 For a detailed roadmap and current issues, please check our [GitHub Issues](https://github.com/your-repo/propnet/issues) page.
+
+## Implementation Plan for Zillow-like Map and Search Functionality
+
+To create a Zillow-like experience in PropNet, we will focus on implementing an interactive map and robust search functionality. Here's our plan:
+
+1. Map Integration:
+   - Use react-leaflet for an interactive map component
+   - Implement property markers on the map
+   - Add clustering for better performance with large datasets
+   - Include zoom controls and various map view options (satellite, street view)
+
+2. Search Functionality:
+   - Create a prominent search bar for entering location (address, neighborhood, city, or ZIP)
+   - Implement autocomplete for search suggestions
+   - Add advanced filtering options:
+     - Property type (office, retail, industrial, etc.)
+     - Price range
+     - Square footage
+     - Number of units
+     - Year built
+     - Amenities
+
+3. User Interface:
+   - Design a layout with the map on one side and property listings on the other
+   - Implement responsive design for mobile and desktop views
+   - Create property cards with key information:
+     - Price
+     - Property type
+     - Square footage
+     - Address
+     - Thumbnail image
+
+4. Interaction Features:
+   - Enable clicking on map markers to show property details
+   - Implement save/favorite functionality for properties
+   - Add a drawing tool for custom area search
+
+5. Performance Optimization:
+   - Implement lazy loading for property listings
+   - Use efficient data structures for quick filtering and sorting
+   - Optimize API calls to reduce load times
+
+6. Additional Enhancements:
+   - Implement geolocation for "Properties near me" feature
+   - Add street view integration for selected properties
+   - Create a "Recently viewed" section for user convenience
+
+This plan will be implemented incrementally, with regular testing and user feedback incorporated throughout the development process.
+
+## File Structure and Explanations
+
+Here's an overview of the main files and directories in the PropNet repository:
+
+### Backend (/commercial_real_estate_backend)
+
+- `main.py`: Entry point of the FastAPI application, sets up the API routes and middleware.
+- `models.py`: Defines SQLAlchemy ORM models for database tables.
+- `schemas.py`: Pydantic schemas for request/response data validation.
+- `crud.py`: Contains CRUD operations for interacting with the database.
+- `database.py`: Establishes database connection and session management.
+- `auth.py`: Implements authentication and authorization logic.
+- `routers/`: Directory containing API route handlers for different resources.
+  - `properties.py`: Handles property-related API endpoints.
+  - `users.py`: Manages user-related API endpoints.
+  - `subscriptions.py`: Handles subscription and payment-related endpoints.
+
+### Frontend (/frontend)
+
+- `src/`: Main source directory for React components and logic.
+  - `components/`: Reusable React components.
+    - `Map.js`: Implements the interactive map using react-leaflet.
+    - `PropertyCard.js`: Displays individual property information.
+    - `SearchBar.js`: Handles property search functionality.
+  - `pages/`: React components for different pages/routes.
+    - `Home.js`: Landing page component.
+    - `PropertyDetails.js`: Detailed view of a single property.
+    - `UserDashboard.js`: User's personal dashboard.
+  - `services/`: API service functions for backend communication.
+  - `utils/`: Utility functions and helpers.
+  - `App.js`: Main React component that sets up routing and global state.
+  - `index.js`: Entry point of the React application.
+
+- `public/`: Static assets and HTML template.
+
+### Configuration Files
+
+- `.env`: Environment variables for both backend and frontend (not tracked in git).
+- `requirements.txt`: Python dependencies for the backend.
+- `package.json`: Node.js dependencies and scripts for the frontend.
+- `alembic.ini`: Configuration for Alembic database migrations.
+
+This structure organizes the codebase into logical components, separating backend and frontend concerns while maintaining a clear hierarchy for easy navigation and maintenance.
