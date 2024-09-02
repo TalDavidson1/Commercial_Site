@@ -171,11 +171,11 @@ Here's an overview of the main files and directories in the PropNet repository:
 
 - `src/`: Main source directory for React components and logic.
   - `components/`: Reusable React components.
-    - `Map.js`: Implements the interactive map using react-leaflet.
+    - `Map.js`: Implements the interactive map using react-leaflet. This component is crucial for the Zillow-like experience, displaying property locations on an interactive map with clustering for better performance.
     - `PropertyCard.js`: Displays individual property information.
-    - `SearchBar.js`: Handles property search functionality.
+    - `SearchBar.js`: Handles property search functionality, including filters for price, square footage, and property type.
   - `pages/`: React components for different pages/routes.
-    - `Home.js`: Landing page component.
+    - `Home.js`: Landing page component that integrates the Map and SearchBar components. It provides a layout similar to Zillow, with a search bar and property list on one side (30% width) and the interactive map on the other (70% width).
     - `PropertyDetails.js`: Detailed view of a single property.
     - `UserDashboard.js`: User's personal dashboard.
   - `services/`: API service functions for backend communication.
@@ -192,4 +192,4 @@ Here's an overview of the main files and directories in the PropNet repository:
 - `package.json`: Node.js dependencies and scripts for the frontend.
 - `alembic.ini`: Configuration for Alembic database migrations.
 
-This structure organizes the codebase into logical components, separating backend and frontend concerns while maintaining a clear hierarchy for easy navigation and maintenance.
+This structure organizes the codebase into logical components, separating backend and frontend concerns while maintaining a clear hierarchy for easy navigation and maintenance. The new Map and Home components work together to provide a Zillow-like experience, with an interactive map view of properties and an integrated search functionality.
